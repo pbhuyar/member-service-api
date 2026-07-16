@@ -5,6 +5,7 @@ public class MemberResponse {
     private String AB_User_Id;
     private String firstName;
     private String lastName;
+    private String email;
     private int age;
 
     public String getAB_User_Id() {
@@ -29,6 +30,14 @@ public class MemberResponse {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {

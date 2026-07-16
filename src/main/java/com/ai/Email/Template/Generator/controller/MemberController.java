@@ -17,6 +17,7 @@ public class MemberController {
         response.setAB_User_Id(request.getAB_User_Id());
         response.setFirstName("Pratik");
         response.setLastName("Bhuyar");
+        response.setEmail("pratik.bhuyar2018@gmail.com");   // Hardcoded email
         response.setAge(25);
 
         return response;
