@@ -96,22 +96,37 @@ public class MemberController {
         m10.setAge(35);
         members.put("AB1010", m10);
     }
-
+    
     @PostMapping("/details")
     public MemberResponse getMemberDetails(@RequestBody MemberRequest request) {
+
+        System.out.println("====================================");
+        System.out.println("API HIT");
+        System.out.println("Received Member ID : " + request.getAB_User_Id());
+        System.out.println("====================================");
 
         MemberResponse response = members.get(request.getAB_User_Id());
 
         if (response == null) {
+
+            System.out.println("Member NOT FOUND");
+
             MemberResponse notFound = new MemberResponse();
             notFound.setAB_User_Id(request.getAB_User_Id());
             notFound.setFirstName("Unknown");
             notFound.setLastName("Member");
             notFound.setEmail("pratik.bhuyar@yanitsolutions.com");
             notFound.setAge(0);
+
             return notFound;
         }
 
+        System.out.println("Member FOUND");
+        System.out.println("First Name : " + response.getFirstName());
+        System.out.println("Last Name  : " + response.getLastName());
+        System.out.println("Email      : " + response.getEmail());
+        System.out.println("Age        : " + response.getAge());
+        System.out.println("====================================");
+
         return response;
     }
-}
